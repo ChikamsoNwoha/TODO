@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Impressive To-Do List</title>
+  <!-- Load Tailwind first -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Then configure -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6">
+    <h1 class="text-3xl font-bold text-purple-600 dark:text-purple-400">My To-Do List</h1>
+    <!-- Button with icon -->
+    <button id="themeToggle" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-400 dark:hover:bg-purple-500">
+      <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+    </button>
+  </header>
+
+  <!-- Input Form -->
+  <section class="max-w-xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+    <div class="flex gap-2 mb-4">
+      <input id="taskInput" type="text" placeholder="Enter a new task..." class="flex-1 p-3 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white" />
+      <select id="taskCategory" class="p-3 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+        <option value="General">General</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+      </select>
+      <button id="addTask" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Add</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex gap-3 mb-4">
+      <input id="searchTask" type="text" placeholder="Search..." class="flex-1 p-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+      <select id="filterCategory" class="p-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+        <option value="All">All</option>
+        <option value="General">General</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+      </select>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="space-y-3"></ul>
+  </section>
+
+</body>
+</html>
